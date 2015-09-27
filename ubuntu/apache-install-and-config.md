@@ -10,28 +10,28 @@ Enable module mod_rewrite:
 $ sudo a2enmod rewrite; sudo service apache2 restart
 ```
 
-Add new site with domain `<sitename>`:
+Add new site with domain `<SITENAME>`:
 
 ```
-$ sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/<sitename>
-$ sudo gedit /etc/apache2/sites-available/<sitename>
+$ sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/<SITENAME>
+$ sudo gedit /etc/apache2/sites-available/<SITENAME>
 ```
 
-In this file replace all `/var/www` to `/home/user/www/<sitename>`.
+In this file replace all `/var/www` to `/home/user/www/<SITENAME>`.
 
-Than insert ServerName `<sitename>` above DocumentRoot `/home/user/www/<sitename>/` like this:
+Than insert ServerName `<SITENAME>` above DocumentRoot `/home/user/www/<SITENAME>/` like this:
 
 ```
 ...
-ServerName <sitename>
-DocumentRoot /home/user/www/<sitename>/
+ServerName <SITENAME>
+DocumentRoot /home/user/www/<SITENAME>/
 ...
 ```
 
 Enable Apache site:
 
 ```
-$ sudo a2ensite <sitename>
+$ sudo a2ensite <SITENAME>
 ```
 
 To add host open hosts
@@ -40,7 +40,11 @@ To add host open hosts
 $ sudo gedit /etc/hosts
 ```
 
-and insert 127.0.1.3 `<sitename>`.
+and insert
+
+```
+127.0.1.3 `<SITENAME>`
+```
 
 After that reload Apache:
 
